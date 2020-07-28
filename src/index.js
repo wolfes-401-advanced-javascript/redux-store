@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Paper, TextField, Box, Typography, List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import store from './store/store-index.js';
+import Change from './components/categories.js';
 
-import Header from '../src/components/header.js';
-import Footer from '../src/components/footer.js';
+import Header from './components/header.js';
+import Footer from './components/footer.js';
 
 
 import './index.scss';
@@ -24,22 +26,26 @@ const useStyles = makeStyles((theme) => {
 
 const App = () => {
   return (
-    <Paper>
-      <div>
-        <Header></Header>
-      </div>
-        <Box component="form" m={5}>
-          <TextField label="Name" variant="outlined" />
-          <TextField label="Password" variant="outlined" />
-        </Box>
-        <Box>
+    <Provider store={ store }>
 
-        </Box>
+      <Paper>
+        <div>
+          <Header></Header>
+          <Change />
+        </div>
+          <Box component="form" m={5}>
+            <TextField label="Name" variant="outlined" />
+            <TextField label="Password" variant="outlined" />
+          </Box>
+          <Box>
 
-        <Box>
-      <Footer></Footer>
-        </Box>
-    </Paper>
+          </Box>
+
+          <Box>
+        <Footer></Footer>
+          </Box>
+      </Paper>
+    </Provider>
   )
 };
 
