@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { Paper, TextField, Box, Typography, List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -31,6 +32,10 @@ const App = () => {
           <TextField label="Name" variant="outlined" />
           <TextField label="Password" variant="outlined" />
         </Box>
+        <Box>
+
+        </Box>
+
         <Box>
       <Footer></Footer>
         </Box>
