@@ -8,10 +8,10 @@ const Update = (props) => {
   console.log(props);
   return(
     <List>
-      {products.map(product => {
+      {props.products.map(product => {
         return (
-          <ListItem key={product}>
-            <ListItemText onClick={() => update(product)}></ListItemText>
+          <ListItem key={product.name}>
+            <ListItemText onClick={() => props.update(product.category)}>{ product.name } </ListItemText>
           </ListItem>
        )
       })}

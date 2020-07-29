@@ -15,10 +15,13 @@ export default (state = initialState, action) => {
       for (let i =0; i < state.products.length; i++) {
         if (state.products[i].category === payload) {
           updatedProduct.push(state.products[i]);
+          
         }
-        return {...state, products: updatedProduct};
+        console.log(state.products, payload)
       }
+      return {...state, products: updatedProduct};
       case 'RESET':
+        
         return initialState;
 
     default:
