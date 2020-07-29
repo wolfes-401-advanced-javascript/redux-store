@@ -13,16 +13,24 @@ export default (state = initialState, action) => {
   switch (type) {
     case 'CHANGE':
       return {...state, activeCategory: payload};
+    case 'RESET':
+      return initialState;  
 
     default:
       return state;
   }
 };
 
-export const change = (active) => {
+export const change = (activeCategory) => {
   return {
     type: 'CHANGE',
-    payload: active,
+    payload: activeCategory,
+  }
+}
+
+export const reset = () => {
+  return {
+    type: 'RESET'
   }
 }
 
