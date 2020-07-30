@@ -3,7 +3,7 @@ const initialState = {
     {name: 'french bread', category: 'bread', inventory: 5, price: '$$'},
     {name: 'carrots', category: 'fresh vegetables', inventory: 3, price: '$'},
   ],
-  totalItems: 0
+  activeCategory: '',
 }
 
 export default (state = initialState, action) => {
@@ -17,9 +17,10 @@ export default (state = initialState, action) => {
           updatedProduct.push(state.products[i]);
           
         }
-        console.log(state.products, payload)
       }
-      return {...state, products: updatedProduct};
+      console.log('State:', state);
+      // console.log('updated products: ', updatedProduct);
+      return {...state, activeCategory: updatedProduct[0].category};
       case 'RESET':
         
         return initialState;
