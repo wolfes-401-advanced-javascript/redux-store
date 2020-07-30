@@ -1,10 +1,10 @@
 
 const initialState = {
   categories: [
-    {name: 'bread', items: 0},
-    {name: 'fresh vegetables', items: 0},
+    {normalized_name: 'bread', display_name: 'fresh bread', description: 'bakery fresh breads'},
+    {normalized_name: 'vegetables', display_name: 'fresh vegetables', description: 'vegetables fresh from the farm'},
   ],
-  totalItems: 0
+  activeCategory: '',
 }
 
 export default (state = initialState, action) => {
