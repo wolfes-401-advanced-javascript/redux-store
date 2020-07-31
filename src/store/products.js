@@ -25,6 +25,9 @@ export default (state = initialState, action) => {
         
         return initialState;
 
+      case 'FETCH':
+        return { ...state, products: payload }
+
     default:
       return state;
   }
@@ -35,4 +38,10 @@ export const update = (active) => {
     type: 'UPDATE',
     payload: active,
   }
+}
+
+export const fetchProducts = () => async (dispatch) => {
+  const productsResponse = await fetch('http://localhost:3000/products');
+  const data = await productsResponse.json();
+  dispatch(set(data));
 }

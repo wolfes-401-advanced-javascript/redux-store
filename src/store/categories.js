@@ -7,7 +7,7 @@ const initialState = {
   activeCategory: '',
 }
 
-export default (state = initialState, action) => {
+export const categoryReducer = (state = initialState, action) => {
   const { type, payload} = action;
 
   switch (type) {
