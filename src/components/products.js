@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Paper, TextField, Box, Typography, List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core';
 
-import products, {update} from '../store/products.js';
+import products, { update, fetchProducts } from '../store/products.js';
 
 const Update = (props) => {
   console.log(props);
+
+  useEffect(() => {
+    props.fetchProducts();
+  }, []);
+
   return(
     <List>
       {props.products.map(product => {
@@ -25,4 +30,4 @@ const mapStateToProps = state => {
   return state.products;
 }
 
-export default connect(mapStateToProps, { update })(Update);
+export default connect(mapStateToProps, { update, fetchProducts })(Update);
