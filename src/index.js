@@ -36,11 +36,7 @@ const App = () => {
           <Change />
           <Update />
         </div>
-          <Box component="form" m={5}>
-            <TextField label="Name" variant="outlined" />
-            <TextField label="Password" variant="outlined" />
-          </Box>
-          
+                    
       </Paper>
           <Box>
         <Footer></Footer>
