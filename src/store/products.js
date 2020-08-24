@@ -43,5 +43,5 @@ export const update = (active) => {
 export const fetchProducts = () => async (dispatch) => {
   const productsResponse = await fetch('http://localhost:3000/products');
   const data = await productsResponse.json();
-  dispatch(set(data));
+  dispatch(update(data));
 }
