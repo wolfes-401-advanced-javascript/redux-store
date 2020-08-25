@@ -6,10 +6,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import store from './store/store-index.js';
 import Change from './components/categories.js';
-import Update from './components/products.js';
+import Update from './components/layout/products.js';
 
-import Header from './components/header.js';
-import Footer from './components/footer.js';
+import Header from './components/layout/header.js';
+import Footer from './components/layout/footer.js';
 
 
 import './index.scss';
