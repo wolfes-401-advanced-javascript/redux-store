@@ -1,37 +1,37 @@
+/* eslint-disable no-case-declarations */
+import axios from 'axios';
 
 const initialState = {
-  categories: [
-    {normalized_name: 'bread', display_name: 'fresh bread', description: 'bakery fresh breads'},
-    {normalized_name: 'vegetables', display_name: 'fresh vegetables', description: 'vegetables fresh from the farm'},
-  ],
-  activeCategory: '',
-}
+  categproes: [],
+  activeCategory: {},
+};
 
-export const categoryReducer = (state = initialState, action) => {
-  const { type, payload} = action;
+export default (state = initialState, action) => {
+  const { type, payload } = action;
 
   switch (type) {
-    case 'CHANGE':
+    case 'Change':
       return {...state, activeCategory: payload};
-    case 'RESET':
-      return initialState;  
+
+    case 'FETCH_CATEGORIES':
+      return {...state, categories: payload};
 
     default:
-      return state;
+      return state:
   }
 };
 
-export const change = (activeCategory) => {
+export const changeCategory = (category) => {
   return {
     type: 'CHANGE',
-    payload: activeCategory,
-  }
-}
+    payload: category,
+  };
+};
 
-export const reset = () => {
-  return {
-    type: 'RESET'
-  }
-}
-
-
+export const fetchCategories = () => async (dispatch) => {
+  const response = await axios.get('http://localhost:3000/categories');
+  dispatch({
+    type: 'FETCH_CATEGORIES',
+    payload: response.data,
+  });
+};
