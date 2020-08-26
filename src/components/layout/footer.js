@@ -1,12 +1,22 @@
-import React from "react";
-import {CopyrightRoundedIcon} from '@material-ui/icons/CopyrightRounded';
+import React from 'react';
+import { Paper, Box, Typography } from '@material-ui/core';
 
-class Footer extends React.Component {
-  render() {
-    return(
-      <footer> {CopyrightRoundedIcon} Code Fellows & Dave Wolfe </footer>
-    );
-  }
-}
+
+
+const Footer = () => {
+  return (
+    <Paper>
+      <Box component="div" id="footer" m={5}>
+
+      </Box>
+      
+      <Typography id="title" variant="p" component="p" gutterBottom>&copy; 2020 Dave Wolfe & Code Fellows</Typography>
+      
+
+    </Paper>
+    
+  );
+};
+
 
 export default Footer;
