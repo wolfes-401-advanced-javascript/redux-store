@@ -73,9 +73,9 @@ function addToCart(product) {
                 <ListItem key={idx + '3'} >Price: ${product.price}</ListItem>
                 <ListItem key={idx + '4'} >In Stock: {product.inventory} </ListItem>
                 <Link className={classes.links} to="/products">
-                  <Button variant="outlined" ></Button>
+                  <Button variant="outlined" onClick={() => props.getOneProduct(product)}>View Details</Button>
                 </Link>
-                  <Button variant="outlined" ></Button>
+                  <Button variant="outlined" onClick={() => addToCart(product)}>Add to Cart</Button>
               </Card>
             </IF>
           ))}
