@@ -7,6 +7,7 @@ import Products from './components/layout/products.js';
 import { Provider } from 'react-redux';
 
 import { BrowserRouter, Route } from 'react-router-dom';
+import { ShoppingCart } from '@material-ui/icons';
 
 
 const App = () => {
@@ -16,10 +17,18 @@ const App = () => {
       <Provider store={store}>
         <Header />
         <Route exact path="/">
+          <SimpleCart />
           <Categories />
           <Products />
         </Route>
+        <Route exact path="/products">
+          <ProductDetails />
+        </Route>
+        <Route exact path="/cart">
+          <ShoppingCart />
+        </Route>
       </Provider>
+      <Footer />
     </BrowserRouter>
     </>
   );
